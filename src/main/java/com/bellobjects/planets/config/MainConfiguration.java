@@ -18,7 +18,7 @@ public class MainConfiguration {
         return new PropertySourcesPlaceholderConfigurer();
     }
 
-    
+
     // public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
     // return new MappingJackson2HttpMessageConverter();
     // }
