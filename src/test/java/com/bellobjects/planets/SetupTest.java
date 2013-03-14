@@ -7,9 +7,9 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.bellobjects.planets.config.MainConfiguration;
+import com.bellobjects.planets.config.TestConfiguration;
 
-@ContextConfiguration(classes={MainConfiguration.class})
+@ContextConfiguration(classes={TestConfiguration.class})
 @Test
 public class SetupTest extends AbstractTestNGSpringContextTests {
 	

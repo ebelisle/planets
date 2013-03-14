@@ -10,9 +10,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.bellobjects.planets.config.H2Configuration;
-import com.bellobjects.planets.config.MainConfiguration;
+import com.bellobjects.planets.config.TestConfiguration;
 
-@ContextConfiguration(classes = { MainConfiguration.class, H2Configuration.class })
+@ContextConfiguration(classes = { TestConfiguration.class, H2Configuration.class })
 @Test
 public class SpringH2Test extends AbstractTestNGSpringContextTests {
 

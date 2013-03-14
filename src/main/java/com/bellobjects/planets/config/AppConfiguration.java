@@ -3,16 +3,12 @@ package com.bellobjects.planets.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 @Configuration
-@PropertySource("classpath:/com/bellobjects/planets/app.properties")
 @ComponentScan(basePackages = "com.bellobjects.planets")
-//  @Import({ PifRestTemplateConfiguration.class, RumbaConfiguration.class })
-@EnableScheduling
-public class MainConfiguration {
+//@EnableScheduling
+public class AppConfiguration {
     @Bean
     public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
