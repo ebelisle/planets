@@ -1,11 +1,10 @@
-package com.bellobjects.planets.dao;
+package com.bellobjects.planets.dao.jpa;
 
 import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceUnit;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -13,14 +12,19 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
 
+import com.bellobjects.planets.dao.PlanetDao;
 import com.bellobjects.planets.model.Planet;
 
 @Repository
-public class PlanetDaoJpa {
+public class PlanetDaoJpa implements PlanetDao {
 
     @PersistenceUnit
     private EntityManager em;
 
+    /* (non-Javadoc)
+     * @see com.bellobjects.planets.dao.jpa.PlanetDao#getPlanets()
+     */
+    @Override
     public Collection<Planet> getPlanets() {
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
