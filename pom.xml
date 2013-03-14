@@ -8,7 +8,7 @@
   <name>PIF Pi Adapter</name>
   <properties>
     <java.version>1.7</java.version>
-    <spring.version>3.2.1.RELEASE</spring.version>
+    <spring.version>3.2.2.RELEASE</spring.version>
   </properties>
   <url>http://maven.apache.org</url>
   <prerequisites>
