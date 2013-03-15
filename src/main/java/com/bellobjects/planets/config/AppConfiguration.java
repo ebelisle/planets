@@ -7,13 +7,11 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @ComponentScan(basePackages = "com.bellobjects.planets")
-//@EnableScheduling
 public class AppConfiguration {
     @Bean
     public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
-
 
     // public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
     // return new MappingJackson2HttpMessageConverter();

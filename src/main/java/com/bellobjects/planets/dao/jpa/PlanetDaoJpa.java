@@ -4,21 +4,24 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+import org.testng.Assert;
 
 import com.bellobjects.planets.dao.PlanetDao;
 import com.bellobjects.planets.model.Planet;
 
 @Repository
+@Transactional(readOnly=true)
 public class PlanetDaoJpa implements PlanetDao {
 
-    @PersistenceUnit
+    @PersistenceContext
     private EntityManager em;
 
     /* (non-Javadoc)
@@ -26,7 +29,7 @@ public class PlanetDaoJpa implements PlanetDao {
      */
     @Override
     public Collection<Planet> getPlanets() {
-
+        Assert.assertNotNull(em);
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Planet> criteriaQuery = cb.createQuery(Planet.class);
         Root<Planet> root = criteriaQuery.from(Planet.class);
