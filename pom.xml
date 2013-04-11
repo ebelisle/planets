@@ -5,7 +5,7 @@
   <artifactId>planets</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>PIF Pi Adapter</name>
+  <name>Spring Demo - Planets</name>
   <properties>
     <java.version>1.7</java.version>
     <spring.version>3.2.2.RELEASE</spring.version>
