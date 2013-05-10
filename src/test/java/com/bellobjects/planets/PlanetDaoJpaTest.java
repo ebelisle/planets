@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
@@ -19,6 +20,9 @@ public class PlanetDaoJpaTest extends AbstractTestNGSpringContextTests {
     @Autowired(required=true)
     private PlanetDao planetDao;
     
+    @Autowired
+    private @Value("${planet.home}") String homePlanet;
+
 	public void CountPlanetsTest() {
 	    Collection<Planet> planets = planetDao.getPlanets();
 	    
