@@ -8,7 +8,6 @@ public class SampleTest {
     public void goodTest() {
         org.springframework.util.Assert.isTrue(true, "Not True");
         org.testng.Assert.assertTrue(true, "Not True");
-        junit.framework.Assert.assertTrue(true);
         org.junit.Assert.assertTrue("Not True", true);
         org.testng.AssertJUnit.assertTrue("Not True", true);
     }
@@ -21,11 +20,6 @@ public class SampleTest {
     @Test(expectedExceptions = java.lang.AssertionError.class)
     public void badOrgTestngAssertTest() {
         org.testng.Assert.assertTrue(false, "Not True");
-    }
-
-    @Test(expectedExceptions = junit.framework.AssertionFailedError.class)
-    public void badJunitFrameworkAssertTest() {
-        junit.framework.Assert.assertTrue(false);
     }
 
     @Test(expectedExceptions = java.lang.AssertionError.class)
@@ -48,10 +42,6 @@ public class SampleTest {
     public void state1() {
     }
 
-    @Test(dependsOnMethods = "badJunitFrameworkAssertTest")
-    public void dependantJunitFrameworkAssertTest() {
-    }
-
     @Test(dependsOnMethods = "badOrgJAssertTest")
     public void dependantOrgJAssertTest() {
     }
@@ -64,9 +54,9 @@ public class SampleTest {
         throw new RuntimeException("Intentional Runtime Exception");
     }
 
-    public boolean ignoredTest() {
-        throw new RuntimeException("methods with return values are not tests");
-    }
+//    public boolean ignoredTest() {
+//        throw new RuntimeException("methods with return values are not tests");
+//    }
 
     public void includedTest() {
         
