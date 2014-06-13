@@ -1,5 +1,7 @@
 package com.bellobjects.planets.dao.jpa;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -12,7 +14,6 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.testng.Assert;
 
 import com.bellobjects.planets.dao.PlanetDao;
 import com.bellobjects.planets.model.Planet;
@@ -29,7 +30,7 @@ public class PlanetDaoJpa implements PlanetDao {
      */
     @Override
     public Collection<Planet> getPlanets() {
-        Assert.assertNotNull(em);
+        assertNotNull(em);
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Planet> criteriaQuery = cb.createQuery(Planet.class);
         Root<Planet> root = criteriaQuery.from(Planet.class);
